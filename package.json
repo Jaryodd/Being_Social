@@ -1,0 +1,26 @@
+{
+  "name": "being_social",
+  "version": "1.0.0",
+  "description": "##  A social media startup owner we want an API for my social network that uses a NoSQL database SO THAT my website can handle large amounts of unstructured data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jaryodd/Being_Social.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jaryodd/Being_Social/issues"
+  },
+  "homepage": "https://github.com/Jaryodd/Being_Social#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "express": "^4.18.1",
+    "mongoose": "^6.5.0",
+    "nodemon": "^2.0.19"
+  }
+}
