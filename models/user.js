@@ -56,14 +56,14 @@ const schemaUser = new Schema(
     }
 );
 
-userSchema.virtual("numfollwing").get(function () {
+schemaUser.virtual("numfollwing").get(function () {
     return this.followedBy.length;
 });
-userSchema.virtual("numfollow").get(function () {
+schemaUser.virtual("numfollow").get(function () {
     return this.following.length;
 });
 
-userSchema.pre("save", function (next) {
+schemaUser.pre("save", function (next) {
     var user = this;
 
     
@@ -83,7 +83,7 @@ userSchema.pre("save", function (next) {
     });
 });
 
-userSchema.pre("findOneAndUpdate", function (next) {
+schemaUser.pre("findOneAndUpdate", function (next) {
     const password = this.getUpdate().$set.password;
     if (!password) {
         return next();
@@ -98,7 +98,7 @@ userSchema.pre("findOneAndUpdate", function (next) {
     }
 });
 
-userSchema.methods.comparePassword = function (candidatePassword, cb) {
+schemaUser.methods.comparePassword = function (candidatePassword, cb) {
     bcrypt.compare(candidatePassword, this.password, function (err, isMatch) {
         if (err) return cb(err);
         cb(null, isMatch);

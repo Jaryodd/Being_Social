@@ -2,7 +2,7 @@ const router = require("express").Router();
 
 const {
   allUsers,
-  getOneUser,
+  OneUser,
   makeUser,
   deleteUser,
   updateUser,
@@ -14,7 +14,7 @@ const {
 router.route("/").get(allUsers).post(makeUser);
 
 
-router.route("/:userId").get(getOneUser).put(updateUser).delete(deleteUser);
+router.route("/:userId").get(OneUser).put(updateUser).delete(deleteUser);
 
 
 router.route("/:userId/following").post(followUser);
