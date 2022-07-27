@@ -3,7 +3,7 @@ const { User, Thought } = require("../models");
 
 
 const thoughtController = {
-    getAllThoughts(req, res) {
+    allThoughts(req, res) {
         Thought.find()
             .select('-__v')
             .then((dbUserData) => {
@@ -24,7 +24,7 @@ const thoughtController = {
                 res.status(500).json(err);
             });
     },
-    getSingleThought(req, res) {
+    singleThought(req, res) {
         Thought.findOne({
             _id: req.params.thoughtId
         })
